@@ -5,6 +5,7 @@ class Account:
         self.account_number=account_number
         self.deposits = []
         self.withdrawals =[]
+        self.transctions=100
         
         
     def deposit(self,amount):
@@ -12,8 +13,8 @@ class Account:
             return f"Deposit amount should be more than zero"
         else:
             self.balance += amount
-            self.deposits.append(amount)
-            return f"You have deposited {amount}. Your new balance is {self.balance}"  
+            self.deposits.append(f"You have deposited{amount}")
+            return f"You have deposited {amount}. Your new balance is {self.balance}. {self.deposits}"  
 
     def withdraw(self,amount):
         if amount>self.balance:
@@ -21,15 +22,17 @@ class Account:
         elif amount<=0:
             return f"Amount must be greater than zero" 
         else:
-            self.balance-=amount
-            self.withdrawals.append(amount)
-            return f"you have withdraw {amount} your balance is {self.balance}" 
+            self.balance-=amount+self.transctions
+            self.withdrawals.append(f"you have withdraw{amount}")
+            return f"you have withdraw {amount} your balance is {self.balance}. {self.withdrawals}" 
     
-
-    def deposits_statement(self):
-
-        print(*self.deposits, sep="\n")
-
-    def withdrawals_statement(self):
-        print(*self.withdrawals, sep="\n")
+def deposits_statement(self):
+        for statements in self.deposits:
+            print(statements)
+def withdraws_statement(self):
+        for staments in self.withdraws:
+            print(staments)
+def current_balance(self):
+        balance = self.balance
+        print(balance)
 
